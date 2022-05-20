@@ -1,35 +1,32 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import './App.css';
-import Button from './components/general/Button.js';
-import Input from './components/general/Input.js';
-import SearchBar from './components/general/SearchBar.js';
-import SelectInput from './components/general/SelectInput.js';
+import Dashboard from './components/Dashboard';
+import Authentication from './components/Authentication';
+// import Button from './components/general/Button.js';
+// import Input from './components/general/Input.js';
+// import SearchBar from './components/general/SearchBar.js';
+// import SelectInput from './components/general/SelectInput.js';
 
 function App() {
-  [isLoggedIn, setIsLoggedIn] = useState(false);
-  [userUsername, setUserUsername] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userUsername, setUserUsername] = useState('');
 
-  function setValue(e) {
-    console.log(e.target.value);
-  }
-
-  function setTitle(e) {
-    console.log(e.target.value);
-  }
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    axios.post('/api/auth', {
+      headers: { authorization: `Bearer ${token}` }
+    }).then((res) => {
+      setIsLoggedIn(true);
+      setUserUsername(res.data.username);
+    }).catch((err) => {
+      console.log(err);
+    })
+  }, []);
 
   return (
     <div className="App">
-      <Input label="Username" type="text" className="whiteInput" setValue={setValue} placeholder="name" />
-      <Input label="Min Date" type="number" className="blackInput" setValue={setValue} icon={"user"} />
-
-      <SelectInput label="Select" className="whiteSelect" setValue={setValue} options={[{ value: "1", label: "One" }, { value: "2", label: "Two" }, { value: "3", label: "Three" }]} />
-      <SelectInput label="Select" className="blackSelect" setValue={setValue} options={[{ value: "1", label: "One" }, { value: "2", label: "Two" }, { value: "3", label: "Three" }]} />
-
-      <Button label="Load More..." className="squareButton" />
-      <Button label="Drama" className="roundButton" />
-
-      <SearchBar title="Search" className="whiteSearch" setTitle={setTitle} />
-      <SearchBar title="Search" className="blackSearch" setTitle={setTitle} />
+      {isLoggedIn ? <Dashboard /> : <Authentication />}
     </div>
   );
 }
