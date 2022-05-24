@@ -1,0 +1,31 @@
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--darkGray);
+	color: var(--white);
+	margin: 0 auto;
+	padding: 1rem 5rem;
+}
+
+nav div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+nav div p {
+	margin: 0 1rem;
+}
+
+nav div span {
+	color: var(--red);
+}
+
+nav div img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+	border: 3px solid var(--red);
+}
