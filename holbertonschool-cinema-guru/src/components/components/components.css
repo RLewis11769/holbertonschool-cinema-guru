@@ -1,0 +1,7 @@
+.activity span:nth-child(odd) {
+	color: var(--red);
+}
+
+.activity span:nth-child(even) {
+	color: var(--white);
+}

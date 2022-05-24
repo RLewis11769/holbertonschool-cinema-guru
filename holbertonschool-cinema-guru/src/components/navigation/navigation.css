@@ -1,3 +1,5 @@
+/* Header */
+
 nav {
 	display: flex;
 	justify-content: space-between;
@@ -28,4 +30,65 @@ nav div img {
 	border-radius: 50%;
 	margin-right: 10px;
 	border: 3px solid var(--red);
+}
+
+/* Sidebar */
+
+.sidebar {
+	background-color: var(--darkRed);
+	width: 5rem;
+	height: 100vh;
+	padding-top: 2rem;
+}
+
+.sidebar:hover {
+	width: 22.5rem;
+}
+
+.sidebar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar-item a {
+	color: var(--white);
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	padding: 0.5rem 1.5rem;
+	visibility: hidden;
+}
+
+.sidebar-item a:hover {
+	background-color: var(--red);
+}
+
+.mainIcon {
+	visibility: visible;
+}
+
+.sidebar:hover .sidebar-item a {
+	visibility: visible;
+}
+
+.sidebar-item h2 {
+	padding: 0 2rem;
+}
+
+.activities {
+	background-color: var(--lightGray);
+	margin: 2rem 0.5rem;
+	padding: 1rem;
+	/* visibility: hidden; */
+}
+
+.activities h1 {
+	color: var(--white);
+	border-bottom: 0.25rem solid var(--white);
+	text-align: center;
+}
+
+.sidebar:hover .activities {
+	visibility: visible;
 }
