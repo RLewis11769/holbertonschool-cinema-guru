@@ -35,6 +35,7 @@ nav div img {
 /* Sidebar */
 
 .sidebar {
+	display: inline-block;
 	background-color: var(--darkRed);
 	width: 5rem;
 	height: 100vh;
@@ -42,45 +43,61 @@ nav div img {
 }
 
 .sidebar:hover {
-	width: 22.5rem;
+	width: 25rem;
 }
 
 .sidebar ul {
 	list-style: none;
-	margin: 0;
 	padding: 0;
 }
 
-.sidebar-item a {
+.sidebar-item, .active-item {
 	color: var(--white);
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	padding: 0.5rem 1.5rem;
 	visibility: hidden;
 }
 
-.sidebar-item a:hover {
+.active-item {
+	background-color: var(--red);
+}
+
+.sidebar-item:hover {
+	background-color: var(--red);
+}
+
+.active-item .mainIcon {
 	background-color: var(--red);
 }
 
 .mainIcon {
 	visibility: visible;
+	padding: 1.5rem;
 }
 
-.sidebar:hover .sidebar-item a {
+.arrowIcon {
+	padding: 1.5rem;
+	height: 2rem;
+	position: relative;
+	left: -1.5rem;
+}
+
+.sidebar:hover .sidebar-item, .sidebar:hover .active-item {
 	visibility: visible;
 }
 
-.sidebar-item h2 {
+.sidebar-item h2, .active-item h2 {
 	padding: 0 2rem;
 }
+
+/* Activities List */
 
 .activities {
 	background-color: var(--lightGray);
 	margin: 2rem 0.5rem;
 	padding: 1rem;
-	/* visibility: hidden; */
+	visibility: hidden;
 }
 
 .activities h1 {
