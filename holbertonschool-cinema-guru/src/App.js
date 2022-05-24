@@ -3,10 +3,6 @@ import axios from 'axios';
 import './App.css';
 import Dashboard from './components/Dashboard';
 import Authentication from './routes/auth/Authentication';
-// import Button from './components/general/Button.js';
-// import Input from './components/general/Input.js';
-// import SearchBar from './components/general/SearchBar.js';
-// import SelectInput from './components/general/SelectInput.js';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

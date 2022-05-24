@@ -4,10 +4,10 @@ import Input from '../../components/general/Input';
 
 export default function Register({username, password, setUsername, setPassword}) {
   return (
-    <div>
+    <div className="content">
       <h1>Create a new account</h1>
-      <Input type="text" placeholder="Username" value={username} onChange={setUsername} />
-      <Input type="password" placeholder="Password" value={password} onChange={setPassword} />
+      <Input type="text" label="Username" value={username} setValue={setUsername} />
+      <Input type="password" label="Password" value={password} setValue={setPassword} />
       <Button label="Sign Up" className="squareButton" />
     </div>
   )

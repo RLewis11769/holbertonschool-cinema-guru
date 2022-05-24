@@ -7,11 +7,19 @@
 }
 
 .false {
-	/* background-color: aqua !important; */
 	width: 50% !important;
 }
 
 .true {
-	/* background-color: violet !important; */
 	width: 50% !important;
+}
+
+.content {
+	background-color: var(--white);
+	padding: 5rem;
+}
+
+.squareButton {
+	position: absolute;
+	right: 10rem;
 }
